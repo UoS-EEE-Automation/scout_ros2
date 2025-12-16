@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<robot name="scout_mini" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:arg name="robot_namespace" default="/" />
+    <xacro:arg name="urdf_extras" default="empty.urdf" />
+
+    <!-- Include the scout_mini macro -->
+    <xacro:include filename="$(find scout_description)/urdf/scout_mini.xacro" />
+
+    <!-- Instantiate the scout_mini robot -->
+    <xacro:scout_mini prefix="" robot_namespace="$(arg robot_namespace)" />
+
+    <!-- Additional definitions -->
+    <xacro:include filename="$(arg urdf_extras)" />
+
+    <!-- Gazebo definitions  -->
+    <xacro:include filename="$(find scout_description)/urdf/scout_mini.gazebo" />
+
+</robot>
